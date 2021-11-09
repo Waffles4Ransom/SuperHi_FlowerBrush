@@ -8,7 +8,5 @@ function draw() {
 }
 
 function mouseClicked() {
-  noStroke()
-  fill("orchid")
-  square(mouseX - 25, mouseY - 25, 50)
+  new Flower(mouseX, mouseY)
 }
