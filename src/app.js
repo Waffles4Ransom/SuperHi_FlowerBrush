@@ -1,12 +1,17 @@
+let flowers
+
 function setup() {
   createCanvas(windowWidth, windowHeight)
+  flowers = []
 }
 
 function draw() {
-  // circle(100, 100, 50)
-  // background("#111118")
+  background("#111118")
+  flowers.forEach(f => {
+    f.draw()
+  })
 }
 
 function mouseClicked() {
-  new Flower(mouseX, mouseY)
+  flowers.push(new Flower(mouseX, mouseY))
 }
