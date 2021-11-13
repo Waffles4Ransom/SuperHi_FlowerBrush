@@ -12,6 +12,6 @@ function draw() {
   })
 }
 
-function mouseClicked() {
+function mouseDragged() {
   flowers.push(new Flower(mouseX, mouseY))
 }
