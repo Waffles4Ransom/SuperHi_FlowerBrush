@@ -1,8 +1,8 @@
 class Flower {
-  constructor(x, y) {
+  constructor(x, y, hue) {
     this.x = x
     this.y = y
-    this.hue = random(100)
+    this.hue = hue
     this.midSize = random(20, 40)
   }
 
