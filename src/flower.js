@@ -5,6 +5,8 @@ class Flower {
     this.hue = hue
     this.midSize = size
     // this.alpha = 100
+    this.petalDist = size + 5
+    this.numOfPetals = 5
   }
 
   draw() {
@@ -14,5 +16,12 @@ class Flower {
     circle(this.x, this.y, this.midSize)
     // this.alpha -= 1
     // this.midSize += 1
+
+    for (let num = 0; num < this.numOfPetals; num += 1) {
+      let angle = TWO_PI * num / this.numOfPetals
+      let petalX = this.petalDist * cos(angle)
+      let petalY = this.petalDist * sin(angle)
+      circle(this.x +petalX, this.y + petalY, 10)
+    }
   }
 }
