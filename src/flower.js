@@ -4,9 +4,8 @@ class Flower {
     this.y = y
     this.hue = hue
     this.midSize = size
-    // this.alpha = 100
-    this.petalDist = size + 5
-    this.numOfPetals = 5
+    this.petalDist = size/2 + random(0, 10)
+    this.numOfPetals = random(7,20)
     this.rotation = 0
     this.rotationSpeed = random(-0.003, 0.003)
   }
@@ -16,17 +15,13 @@ class Flower {
     noStroke()
     fill(this.hue, 100, 100, this.alpha)
     circle(this.x, this.y, this.midSize)
-    // this.alpha -= 1
-    // this.midSize += 1
 
     for (let num = 0; num < this.numOfPetals; num += 1) {
       let angle = TWO_PI * num / this.numOfPetals + this.rotation
       let branch = createVector(this.petalDist, 0)
       branch.rotate(angle)
-
       circle(this.x + branch.x, this.y + branch.y, 10)
     }
-
     this.rotation += this.rotationSpeed
   }
 }
