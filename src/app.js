@@ -27,3 +27,9 @@ function mouseReleased() {
   hue = random(0, 100)
   size = 20
 }
+
+function keyTyped() {
+  if (key === 's') {
+    saveCanvas('FlowerDrawing', 'jpg')
+  }
+}
