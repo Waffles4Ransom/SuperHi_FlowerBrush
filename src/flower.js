@@ -7,6 +7,8 @@ class Flower {
     // this.alpha = 100
     this.petalDist = size + 5
     this.numOfPetals = 5
+    this.rotation = 0
+    this.rotationSpeed = random(-0.003, 0.003)
   }
 
   draw() {
@@ -18,11 +20,13 @@ class Flower {
     // this.midSize += 1
 
     for (let num = 0; num < this.numOfPetals; num += 1) {
-      let angle = TWO_PI * num / this.numOfPetals
+      let angle = TWO_PI * num / this.numOfPetals + this.rotation
       let branch = createVector(this.petalDist, 0)
       branch.rotate(angle)
 
       circle(this.x + branch.x, this.y + branch.y, 10)
     }
+
+    this.rotation += this.rotationSpeed
   }
 }
