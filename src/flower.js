@@ -19,9 +19,10 @@ class Flower {
 
     for (let num = 0; num < this.numOfPetals; num += 1) {
       let angle = TWO_PI * num / this.numOfPetals
-      let petalX = this.petalDist * cos(angle)
-      let petalY = this.petalDist * sin(angle)
-      circle(this.x +petalX, this.y + petalY, 10)
+      let branch = createVector(this.petalDist, 0)
+      branch.rotate(angle)
+
+      circle(this.x + branch.x, this.y + branch.y, 10)
     }
   }
 }
